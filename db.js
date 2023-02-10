@@ -12,9 +12,5 @@ mongoose.connect(uri)
         process.exit(1);
     });
 
-const getDb = () => {
-    return mongoose.connection;
-};
-
-exports = { getDb };
+module.exports = mongoose.connection;
 

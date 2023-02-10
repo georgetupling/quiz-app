@@ -1,0 +1,5 @@
+10Feb2023
+
+- Finish making the CRUD API routes
+- Move the CRUD routes for the questions DB to their own file to clean up app.js
+- Start on the front end??

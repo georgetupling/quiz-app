@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const questionSchema = {
+const questionSchema = new Schema({
     question: {
         type: String,
         required: true
@@ -25,8 +26,8 @@ const questionSchema = {
         type: String,
         required: true
     },
-};
+});
 
 const Question = mongoose.model("Question", questionSchema);
 
-exports = { Question };
+module.exports = Question;
