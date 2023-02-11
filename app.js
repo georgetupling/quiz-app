@@ -1,27 +1,18 @@
 const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
-
 const db = require("./db");
-const Question = require("./models/question");
 
 const app = express();
-app.use(express.static(path.join(__dirname, "client/build")));
+
+const questionRouter = require("./routes/question"); 
+app.use("/question", questionRouter);
+
+app.use(express.static(path.join(__dirname, "client")));
 app.use(urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
-
-app.post("/question", (req, res) => {
-        const newQuestion = new Question(req.body);
-        newQuestion.save()
-            .then(() => {
-                res.status(201).json({ message: "Question created successfully" })
-            })
-            .catch ((err) => {
-                res.status(500).json({ err });
-            });  
+    res.sendFile(path.join(__dirname, "client", "index.html"));
 });
 
 app.listen(port = process.env.port || 3000, () => {
