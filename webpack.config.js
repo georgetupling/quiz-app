@@ -17,10 +17,12 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { 
+    extensions: ["*", ".js", ".jsx"],
+  },
   output: {
-    path: path.resolve(__dirname, "client/dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, "client/public/"),
+    publicPath: "/public/",
     filename: "bundle.js"
   },
   devServer: {

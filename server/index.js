@@ -1,14 +1,14 @@
-const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
 const db = require("./db");
+const { urlencoded } = require("express");
 
 const app = express();
 
 const questionRouter = require("./routes/question"); 
 app.use("/question", questionRouter);
 
-app.use(express.static(path.join(__dirname, "client")));
+app.use(express.static(path.join(__dirname, "../client/public")));
 app.use(urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
