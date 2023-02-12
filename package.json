@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development",
-    "start": "rm client/public/bundle.js && webpack --mode development && node server/index.js"
+    "start": "rm client/public/bundle.js && webpack --mode development && nodemon server/index.js"
   },
   "author": "George Tupling",
   "license": "ISC",

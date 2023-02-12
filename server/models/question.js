@@ -2,45 +2,41 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const questionSchema = new Schema({
-    question: {
-        type: String,
-        required: true
+  question: {
+    type: String,
+    required: true,
+  },
+  answers: {
+    A: {
+      type: String,
+      required: true,
     },
-    answers: {
-        A: {
-            type: String,
-            required: true
-        },
-        B: {
-            type: String,
-            required: true
-        },
-        C: {
-            type: String,
-            required: false
-        },
-        D: {
-            type: String,
-            required: false
-        },
-        E: {
-            type: String,
-            required: false
-        },
-        F: {
-            type: String,
-            required: false
-        }
+    B: {
+      type: String,
+      required: true,
     },
-    correct_answer: {
-        type: String,
-        required: true,
-        enum: ["A", "B", "C", "D", "E", "F"]
+    C: {
+      type: String,
+      required: false,
     },
-    module: {
-        type: String,
-        required: false
-    }
+    D: {
+      type: String,
+      required: false,
+    },
+    E: {
+      type: String,
+      required: false,
+    },
+  },
+  correct_answer: {
+    type: String,
+    required: true,
+    enum: ["A", "B", "C", "D", "E"],
+  },
+  subject: {
+    type: String,
+    required: true,
+  },
 });
 
 const Question = mongoose.model("Question", questionSchema);
