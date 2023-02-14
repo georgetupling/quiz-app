@@ -17,21 +17,17 @@ const questionSchema = new Schema({
     },
     C: {
       type: String,
-      required: false,
+      required: true,
     },
     D: {
       type: String,
-      required: false,
-    },
-    E: {
-      type: String,
-      required: false,
+      required: true,
     },
   },
   correct_answer: {
     type: String,
     required: true,
-    enum: ["A", "B", "C", "D", "E"],
+    enum: ["A", "B", "C", "D"],
   },
   subject: {
     type: String,

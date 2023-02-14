@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     let result = [];
     let foundQuestionsCopy = [...foundQuestions];
 
-    for (let i = 0; i < foundQuestionsCopy.length; i++) {
+    for (let i = 0; i < 10; i++) {
       const randomIndex = Math.floor(Math.random() * foundQuestionsCopy.length);
       result.push(foundQuestionsCopy[randomIndex]);
       foundQuestionsCopy.splice(randomIndex, 1);

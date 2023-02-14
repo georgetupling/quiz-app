@@ -4,7 +4,9 @@ function MenuBar() {
   return (
     <div className="menu-bar">
       <img src="images/quiz.png"></img>
-      <h1>Computer Science Quiz</h1>
+      <h1>
+        <a href="/">Computer Science Quiz</a>
+      </h1>
     </div>
   );
 }
