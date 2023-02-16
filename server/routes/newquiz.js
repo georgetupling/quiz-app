@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   const query = req.query.subject;
-  console.log(`Querying for ${query} questions...`);
   Question.find({ subject: query }, (err, foundQuestions) => {
     if (err) {
       res.status(500).json({ err });
