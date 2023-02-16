@@ -30,6 +30,6 @@ app.get("/", (req, res) => {
 //   });
 // });
 
-app.listen((port = process.env.PORT || 8000), () => {
+app.listen((port = process.env.PORT || 8000 || 8080), () => {
   console.log(`Server is running on port ${port}.`);
 });
