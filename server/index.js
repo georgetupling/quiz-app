@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const db = require("./db");
+const dotenv = require("dotenv").config();
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +30,6 @@ app.get("/", (req, res) => {
 //   });
 // });
 
-app.listen((port = process.env.port || 3000), () => {
+app.listen((port = process.env.PORT || 8000), () => {
   console.log(`Server is running on port ${port}.`);
 });
